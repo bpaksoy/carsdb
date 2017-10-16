@@ -18,3 +18,10 @@ router.get("/cars/:id", function(req,res){
     res.json(data);
   });
 });
+
+router.post("/cars", function(req, res){
+  queries.cars.create(req.body)
+  .then(function(results){
+    res.send(results[0]);
+  })
+});

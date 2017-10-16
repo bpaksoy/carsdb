@@ -8,6 +8,11 @@ module.exports = {
     getOne: function(id){
       return knex("car")
       .where("id", id);
+    },
+    create: function(car){
+      return knex("car")
+      .insert(car)
+      .returning("*");
     }
   }
 }
